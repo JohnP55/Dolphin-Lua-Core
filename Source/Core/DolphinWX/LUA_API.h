@@ -25,6 +25,7 @@ namespace Lua
 		int frameAdvance(lua_State *L);
 		int getFrameCount(lua_State *L);
         int getLagCount(lua_State *L);
+        int getTickCount(lua_State *L);
 		int softReset(lua_State *L);
         int setEmulatorSpeed(lua_State *L);
 	}

@@ -537,6 +537,14 @@ int GetInputFrameCount(lua_State* L)
 	return 1; // number of return values
 }
 
+int GetTickCount(lua_State *L)
+{
+	int argc = lua_gettop(L);
+
+	lua_pushinteger(L, CoreTiming::GetTicks()); // return value
+	return 1;                                           // number of return values
+}
+
 int SetScreenText(lua_State* L)
 {
 	int argc = lua_gettop(L);
@@ -1536,6 +1544,7 @@ namespace Lua
 
 		lua_register(luaState, "GetFrameCount", GetFrameCount);
 		lua_register(luaState, "GetInputFrameCount", GetInputFrameCount);
+		lua_register(luaState, "GetTickCount", GetTickCount);
 		lua_register(luaState, "MsgBox", MsgBox);
 		
 		lua_register(luaState, "SetScreenText", SetScreenText);

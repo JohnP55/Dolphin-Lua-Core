@@ -48,6 +48,7 @@ int SaveState(lua_State *L);
 int LoadState(lua_State *L);
 int GetFrameCount(lua_State *L);
 int GetInputFrameCount(lua_State *L);
+int GetTickCount(lua_State *L);
 int SetScreenText(lua_State *L);
 int PauseEmulation(lua_State *L);
 int SetInfoDisplay(lua_State *L);

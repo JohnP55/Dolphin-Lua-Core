@@ -4,6 +4,7 @@
 
 #include "DolphinWX/LUA_API.h"
 
+#include "Core/CoreTiming.h"
 #include "Core/Movie.h"
 #include "Core/HW/ProcessorInterface.h"
 #include "Core/ConfigManager.h"
@@ -32,6 +33,12 @@ namespace Lua
 		int getLagCount(lua_State *L)
         {
 	        lua_pushinteger(L, Movie::g_currentLagCount);
+	        return 1;
+        }
+
+        int getTickCount(lua_State *L)
+        {
+	        lua_pushinteger(L, CoreTiming::GetTicks());
 	        return 1;
         }
 
